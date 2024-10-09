@@ -3,18 +3,29 @@ import { Button } from './Button';
 
 export default {
   title: 'Form/Button',
-  component: Button
+  component: Button,
+  args: {
+    children: 'Button'
+  }
 } satisfies Meta<typeof Button>
 
 const Template: StoryFn<typeof Button> = (args) => <Button {...args}/>
 
-// export const Primary = Template.bind({});
-// Primary.args = {
-//   variant: 'primary',
-//   children: 'Primary',
-// };
+export const PrimaryA = Template.bind({});
+PrimaryA.args = {
+  variant: 'primary',
+  children: 'Primary',
+};
 
-// Primary.storyName = 'Primary button'
+PrimaryA.storyName = 'Primary button';
+
+
+// If we have a lot of stories, sometimes we need to reuse the args object from another story
+export const LongPrimaryA = Template.bind({});
+LongPrimaryA.args = {
+  ...PrimaryA.args,
+  children: 'Long Primary Args'
+};
 
 // Below the component is going to be used within another story
 // that's why Template wasn't used as args have to be passed directly
