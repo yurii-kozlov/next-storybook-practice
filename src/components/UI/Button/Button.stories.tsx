@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { Button } from './Button';
 
 export default {
@@ -8,12 +8,17 @@ export default {
 
 const Template: StoryFn<typeof Button> = (args) => <Button {...args}/>
 
-export const Primary = Template.bind({});
-Primary.args = {
-  variant: 'primary',
-  children: 'Primary',
-};
-Primary.storyName = 'Primary button'
+// export const Primary = Template.bind({});
+// Primary.args = {
+//   variant: 'primary',
+//   children: 'Primary',
+// };
+
+// Primary.storyName = 'Primary button'
+
+// Below the component is going to be used within another story
+// that's why Template wasn't used as args have to be passed directly
+export const PrimaryButton = () => <Button variant="primary">Primary</Button>
 
 export const Secondary = Template.bind({});
 Secondary.args = {

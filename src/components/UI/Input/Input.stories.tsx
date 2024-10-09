@@ -20,8 +20,12 @@ Medium.args = {
   placeholder: 'Medium size'
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  placeholder: 'Large size'
-};
+// export const Large = Template.bind({});
+// Large.args = {
+//   size: 'large',
+//   placeholder: 'Large size'
+// };
+
+// Below the component is going to be used within another story
+// that's why Template wasn't used as args have to be passed directly
+export const Large = () => <Input size='large' placeholder='Large size'/>
