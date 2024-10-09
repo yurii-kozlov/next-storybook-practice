@@ -1,12 +1,17 @@
 import type { Meta, StoryFn } from '@storybook/react';
 import { Button } from './Button';
+import { Center } from '../decorators/Center';
 
 export default {
   title: 'Form/Button',
   component: Button,
   args: {
     children: 'Button'
-  }
+  },
+  // Decorators are components that wrap a story;
+  decorators: [
+    (Story) => <Center><Story /></Center>
+  ]
 } satisfies Meta<typeof Button>
 
 const Template: StoryFn<typeof Button> = (args) => <Button {...args}/>

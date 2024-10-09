@@ -1,4 +1,6 @@
+import React from 'react'
 import type { Preview } from "@storybook/react";
+import { Center } from '../src/components/UI/decorators/Center'
 
 const preview: Preview = {
   parameters: {
@@ -14,6 +16,9 @@ const preview: Preview = {
         a.id === b.id ? 0 : a.id.localeCompare(b.id, undefined, { numeric: true }),
     },
   },
+  decorators: [
+    (Story) => <Center><Story/></Center>
+  ]
 };
 
 export default preview;
