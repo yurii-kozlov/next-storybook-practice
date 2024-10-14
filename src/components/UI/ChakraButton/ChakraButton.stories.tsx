@@ -3,7 +3,10 @@ import { Button } from "@chakra-ui/react";
 
 export default {
   title: 'Chakra/Button',
-  component: Button
+  component: Button,
+  argTypes: {
+    onClick: { action: 'clicked'}
+  }
 } as Meta<typeof Button>
 
 const Template: StoryFn<typeof Button> = (args) => <Button {...args}/>;
@@ -25,3 +28,5 @@ Default.args = {
   colorScheme: 'blue',
   children: 'Default'
 };
+
+export const Log = () => <Button colorScheme='blue' onClick={() => console.log('click happens')}>Log</Button>
