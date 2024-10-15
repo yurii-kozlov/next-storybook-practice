@@ -3,6 +3,7 @@ import { withCenter } from './decorators/withCenter';
 import { withThemeProvider } from './decorators/withThemeProvider';
 import { withConsole } from "./decorators/withConsole";
 import '@storybook/addon-console';
+import { withKnobs } from '@storybook/addon-knobs';
 
 const preview: Preview = {
   parameters: {
@@ -21,7 +22,7 @@ const preview: Preview = {
         a.id === b.id ? 0 : a.id.localeCompare(b.id, undefined, { numeric: true }),
     },
   },
-  decorators: [withThemeProvider, withCenter, withConsole],
+  decorators: [withThemeProvider, withCenter, withConsole, withKnobs],
 };
 
 export default preview;
