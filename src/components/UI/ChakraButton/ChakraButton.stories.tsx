@@ -21,7 +21,8 @@ Success.args = {
 export const Danger = Template.bind({});
 Danger.args = {
   colorScheme: 'red',
-  children: 'Danger'
+  children: 'Danger',
+  onClick: () => console.log(process.env.EXAMPLE_VAR)
 };
 
 export const Default = Template.bind({});
@@ -30,10 +31,14 @@ Default.args = {
   children: 'Default'
 };
 
-export const Log = () => <Button colorScheme='blue' onClick={() => console.log('click happens')}>Log</Button>
+export const Log = () => <Button colorScheme='blue' onClick={() => console.log('click happens', process.env.STORYBOOK_THEME)}>Log</Button>
 
 export const Knobs = () => (
-  <Button colorScheme={text('colorScheme', 'purple')} isDisabled={boolean('isDisabled', false)}>
+  <Button 
+    colorScheme={text('colorScheme', 'purple')}
+    isDisabled={boolean('isDisabled', false)}
+    onClick={() => console.log(process.env.STORYBOOK_DATA_TESTING_KEY)}
+    >
     {text('Label', 'Button label')}
   </Button>
 )

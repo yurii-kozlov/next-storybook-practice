@@ -16,5 +16,9 @@ const config: StorybookConfig = {
     name: "@storybook/nextjs",
     options: {},
   },
+  env: (config) => ({
+    ...config,
+    EXAMPLE_VAR: 'An environment variable configured in Storybook'
+  })
 };
 export default config;
