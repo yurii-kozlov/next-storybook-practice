@@ -6,6 +6,9 @@ import '@storybook/addon-console';
 
 const preview: Preview = {
   parameters: {
+    docs: {
+      toc: true
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
